@@ -5,12 +5,14 @@ function Header ({
   onSearch
 }) {
   return (
-    <header className='note-app__header'>
-      <h1>My Personal Notes</h1>
-      <div className='note-search'>
-        <NoteSearch onSearch={onSearch}/>
-      </div>
-    </header>
+    <div className="note-app__header">
+      <header className='sticky-header'>
+        <h1>My Personal Notes</h1>
+        <div className='note-search'>
+          <NoteSearch onSearch={onSearch}/>
+        </div>
+      </header>
+    </div>
   )
 }
 
