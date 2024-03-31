@@ -72,12 +72,6 @@ class NoteEdit extends React.Component {
             onSubmit={this.onSaveChangeEventHandler}
           >
             <input 
-              type="hidden" 
-              name="id" 
-              value={this.props.id} 
-            />
-
-            <input 
               type="text" 
               className='note-input__title'
               placeholder='Tulis judul di sini...' 

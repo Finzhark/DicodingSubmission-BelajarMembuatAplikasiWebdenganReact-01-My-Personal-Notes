@@ -168,12 +168,6 @@ class NoteApp extends React.Component {
               show={this.state.isEditOpen}
               onSave={this.onSaveEditHandler}
               onCancel={this.onCloseEditHandler}
-              
-              // title={this.state.notes
-              //   .find(note => note.id === this.state.editedNoteId).title}
-              // body={this.state.notes
-              //   .find(note => note.id === this.state.editedNoteId).body}
-
               title={this.state.editedNoteTitle}
               body={this.state.editedNoteBody}
             />

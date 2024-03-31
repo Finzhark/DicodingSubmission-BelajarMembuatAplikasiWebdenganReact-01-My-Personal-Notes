@@ -18,7 +18,6 @@ function DeleteButton ({
   return (
     <button 
       className="note-item__delete-button"
-      // onClick={() => onDelete(id)}
       onClick={onDeleteEventHandler}
     >
       <span class="material-symbols--delete-forever"/>

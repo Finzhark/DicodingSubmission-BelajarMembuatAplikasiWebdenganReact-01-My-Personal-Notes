@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer ({}) {
+function Footer () {
   return (
     <footer className='note-app__footer'>
       <hr />
