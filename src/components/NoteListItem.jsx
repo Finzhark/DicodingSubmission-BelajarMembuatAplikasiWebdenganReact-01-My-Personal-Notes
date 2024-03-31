@@ -2,7 +2,6 @@ import React from 'react';
 import { showFormattedDate } from '../utils' ;
 import DeleteButton from './button/DeleteButton';
 import ArchiveButton from './button/ArchiveButton';
-import EditButton from './button/EditButton';
 
 function NoteListItem ({
   id,
@@ -11,7 +10,6 @@ function NoteListItem ({
   onDelete, 
   onArchive,
   archive,
-  onEdit 
 }) {
   return (
     <div className="note-item">
@@ -36,10 +34,6 @@ function NoteListItem ({
           id={id}
           archive={archive}
           onArchive={onArchive} 
-        />
-        <EditButton 
-          id={id}
-          onEdit={onEdit}
         />
       </div>
     </div>

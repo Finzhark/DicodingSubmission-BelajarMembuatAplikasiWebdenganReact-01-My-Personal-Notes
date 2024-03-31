@@ -5,7 +5,6 @@ function NoteList ({
   notes, 
   onDelete, 
   onArchive,
-  onEdit
 }) {
   const activeNotes = notes
     .filter(note => !note.archived)
@@ -26,7 +25,6 @@ function NoteList ({
               onDelete={onDelete}
               onArchive={onArchive}
               archive={note.archived}
-              onEdit={onEdit}
             />
           ))}
         </div>
@@ -50,7 +48,6 @@ function NoteList ({
               onDelete={onDelete}
               onArchive={onArchive}
               archive={note.archived}
-              onEdit={onEdit}
             />
           ))}
         </div>
