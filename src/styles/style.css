@@ -44,6 +44,7 @@ input::placeholder, textarea::placeholder {
   position: sticky;
   top:0;
   background-color: #000;
+  z-index: 1000;
 }
 
 .note-app__header {
