@@ -178,8 +178,6 @@ input::placeholder, textarea::placeholder {
 
 .note-item__action {
   display: flex;
-  flex-direction: row;
-  width: 100%;
 }
 
 .note-item__delete-button,
@@ -190,14 +188,14 @@ input::placeholder, textarea::placeholder {
   background-color: transparent;
   border: 0;
   border-top: 1px solid #aaa;
-  padding: 8px 0;
+  padding: 2px 2px;
   font-family: 'Inter', sans-serif;
   font-weight: bold;
   cursor: pointer;
 }
 
 .note-item__delete-button {
-  border-right: 1px solid #aaa;
+  /* border-right: 1px solid #aaa; */
   color: #ff5f52;
 }
 
@@ -206,17 +204,16 @@ input::placeholder, textarea::placeholder {
 }
 
 .note-item__edit-button {
+  /* border-left: 1px solid #aaa; */
   color: #57b046
 }
 
 .note-item__archive-button:hover {
-  color: #fff263;
-  background-color: #c4900040;
+  color: #c49000;
 }
 
 .note-item__delete-button:hover {
-  color: #ff5f52;
-  background-color: #b0002040;
+  color: #b00020;
 }
 
 .note-item__edit-button:hover {
@@ -239,6 +236,7 @@ input::placeholder, textarea::placeholder {
   cursor: pointer;
 }
 
+
 .note-input .note-edit__cancel {
   color: #ff1a06;
   border-color: #ff1a06;
@@ -250,6 +248,30 @@ input::placeholder, textarea::placeholder {
   border-color: #ff1a06;
 }
 
+@media only screen and (min-width: 500px) {
+  .notes-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .notes-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .note-search input {
+    min-width: 500px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .notes-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/* TEST MODAL */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -266,10 +288,38 @@ input::placeholder, textarea::placeholder {
   background-color: #202124;
   padding: 20px;
   border-radius: 8px;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
   border: 1px solid #fff;
   min-width: 50%;
+  /* max-width: 80%; */
 }
 
+/* .modal-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+} */
+
+/* 
+.modal-buttons {
+  margin-top: 20px;
+} */
+
+/* .modal-buttons button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+} */
+
+/* .modal-buttons button:hover {
+  background-color: #0056b3;
+} */
+
+
+/* ICON */
 .material-symbols--delete-forever {
   display: inline-block;
   width: 1.5rem;
@@ -324,26 +374,4 @@ input::placeholder, textarea::placeholder {
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
-}
-
-@media only screen and (min-width: 500px) {
-  .notes-list {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  .notes-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .note-search input {
-    min-width: 500px;
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  .notes-list {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
