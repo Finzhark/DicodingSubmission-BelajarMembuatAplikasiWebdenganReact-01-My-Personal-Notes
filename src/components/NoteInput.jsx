@@ -17,12 +17,15 @@ class NoteInput extends React.Component {
 
   onTitleChangeEventHandler(event) {
     const newTitle = event.target.value;
-    const remainingTitleChars = 50 - newTitle.length;
+    const maxTitleLength = 50;
+    const remainingTitleChars = maxTitleLength - newTitle.length;
   
-    this.setState({
-      title: newTitle,
-      remainingTitleChars: remainingTitleChars
-    });
+    if (remainingTitleChars >= 0) {
+      this.setState({
+        title: newTitle, 
+        remainingTitleChars: remainingTitleChars
+      })
+    }
   }
 
   onBodyChangeEventHandler(event) {
@@ -38,7 +41,7 @@ class NoteInput extends React.Component {
 
     this.props.addNote({
       id: +new Date(),
-      date: new Date(),
+      createdAt: new Date(),
       title: this.state.title,
       body: this.state.body,
     })
@@ -48,6 +51,14 @@ class NoteInput extends React.Component {
       body: '',
       remainingTitleChars: 50
     })
+
+    // Ngujicoba
+    console.table({
+      id: +new Date(),
+      createdAt: new Date(),
+      title: this.state.title,
+      body: this.state.body,
+    });
   }
 
   render() {
@@ -66,7 +77,6 @@ class NoteInput extends React.Component {
             placeholder='Tulis judul di sini...' 
             value={this.state.title}
             onChange={this.onTitleChangeEventHandler}
-            maxLength={50}
             required
           />
           <textarea 

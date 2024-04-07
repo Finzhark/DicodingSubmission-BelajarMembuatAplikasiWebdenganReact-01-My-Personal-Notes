@@ -13,14 +13,14 @@ function ArchiveButton ({
           className='note-item__archive-button'
           onClick={() => onArchive(id)}
         >
-          <span class="clarity--archive-solid"/>
+          <span className="clarity--archive-solid"/>
         </button>
         :
         <button     
           className="note-item__archive-button"
           onClick={() => onArchive(id)}
         >
-          <span class="clarity--unarchive-solid"/>
+          <span className="clarity--unarchive-solid"/>
         </button>
       }
     </div>

@@ -18,20 +18,22 @@ class NoteEdit extends React.Component {
 
   onTitleChangeEventHandler(event) {
     const newTitle = event.target.value;
-    const remainingTitleChars = 50 - newTitle.length;
-
-    this.setState({
-      title: newTitle,
-      remainingTitleChars: remainingTitleChars
-    });
+    const maxTitleLength = 50
+    const remainingTitleChars = maxTitleLength - newTitle.length
+  
+    if (remainingTitleChars >= 0) {
+      this.setState({
+        title: newTitle, 
+        remainingTitleChars: remainingTitleChars
+      })
+    }
   }
 
   onBodyChangeEventHandler(event) {
-    this.setState(() => {
-      return {
-        body: event.target.value,
-      }
-    })
+    const newBody = event.target.value;
+    this.setState({
+      body: newBody,
+    });
   }
 
   onSaveChangeEventHandler(event) {
@@ -39,7 +41,7 @@ class NoteEdit extends React.Component {
 
     this.props.onSave({
       id: this.props.id,
-      date: this.props.date,
+      createdAt: this.props.createdAt,
       title: this.state.title,
       body: this.state.body
     });
@@ -49,6 +51,8 @@ class NoteEdit extends React.Component {
       body: '',
       remainingTitleChars: 50
     });
+
+    console.log("ID note (tidak berubah):", this.props.id, " | Date:", this.props.date, " | Title:", this.state.title, " | Body:", this.state.body);
   }
 
   onCancelChangeEventHandler(event) {
@@ -77,7 +81,6 @@ class NoteEdit extends React.Component {
               placeholder='Tulis judul di sini...' 
               value={this.state.title}
               onChange={this.onTitleChangeEventHandler}
-              maxLength={50}
               required
             />
             <textarea 

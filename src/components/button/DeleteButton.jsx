@@ -20,7 +20,7 @@ function DeleteButton ({
       className="note-item__delete-button"
       onClick={onDeleteEventHandler}
     >
-      <span class="material-symbols--delete-forever"/>
+      <span className="material-symbols--delete-forever"/>
     </button>
   )
 }

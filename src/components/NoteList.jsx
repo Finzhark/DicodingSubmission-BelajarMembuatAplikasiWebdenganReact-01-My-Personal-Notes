@@ -11,7 +11,7 @@ function NoteList ({
     .filter(note => !note.archived)
   const archivedNotes = notes
     .filter(note => note.archived)
-
+  console.table('Catatan aktif:', activeNotes, 'Arsip:', archivedNotes)
   return (
     <>
       <h2>Catatan Aktif</h2>

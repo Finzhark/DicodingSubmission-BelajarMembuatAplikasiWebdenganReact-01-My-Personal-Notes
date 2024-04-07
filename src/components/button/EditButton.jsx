@@ -9,7 +9,7 @@ function EditButton({
       className="note-item__edit-button"
       onClick={onEdit}
     >
-      <span class="clarity--note-edit-solid"/>
+      <span className="clarity--note-edit-solid"/>
     </button>
   );
 }
